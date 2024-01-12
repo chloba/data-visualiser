@@ -16,7 +16,6 @@ export default {
   mounted() {
     const dates = this.chartData.map((d) => d.date).reverse();
     const totals = this.chartData.map((d) => d.totals).reverse();
-
     this.renderChart(
       {
         labels: dates,
