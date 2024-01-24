@@ -3,11 +3,7 @@
     <div class="row mt-5" v-if="arrPositive.length > 0">
       <div class="col">
         <h2>Positive</h2>
-        <line-chart
-          :chartData="arrPositive"
-          :options="chartOptions"
-          :label="Positive"
-        />
+        <line-chart :chartData="arrPositive" label="Positive" />
       </div>
     </div>
   </div>
@@ -30,10 +26,6 @@ export default {
       arrOnVentilators: [],
       arrRecovered: [],
       arrDeaths: [],
-      chartOptions: {
-        responsive: true,
-        maintainAspectRatio: false,
-      },
     };
   },
   async created() {
