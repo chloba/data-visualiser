@@ -40,20 +40,12 @@ export default {
   data() {
     return {
       data: {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-        ],
+        labels: this.chartData.map((d) => d.date).reverse(),
         datasets: [
           {
             label: this.label,
             backgroundColor: "#f87979",
-            data: [40, 39, 10, 40, 39, 80, 40],
+            data: this.chartData.map((d) => d.total).reverse(),
           },
         ],
       },
@@ -63,22 +55,6 @@ export default {
       },
     };
   },
-  // mounted() {
-  //   const dates = this.data.map((d) => d.date).reverse();
-  //   const totals = this.data.map((d) => d.totals).reverse();
-  //   this.renderChart(
-  //     {
-  //       labels: dates,
-  //       datasets: [
-  //         {
-  //           label: this.label,
-  //           data: totals,
-  //         },
-  //       ],
-  //     },
-  //     this.options
-  //   );
-  // },
 };
 </script>
 <style scoped>
