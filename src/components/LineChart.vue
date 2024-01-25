@@ -36,6 +36,9 @@ export default {
       type: Array,
       required: true,
     },
+    chartColours: {
+      type: Object,
+    },
   },
   data() {
     return {
@@ -44,7 +47,8 @@ export default {
         datasets: [
           {
             label: this.label,
-            backgroundColor: "#f87979",
+            backgroundColor: this.chartColours.backgroundColor,
+            borderColor: this.chartColours.borderColor,
             data: this.chartData.map((d) => d.total).reverse(),
           },
         ],
@@ -57,8 +61,4 @@ export default {
   },
 };
 </script>
-<style scoped>
-div {
-  height: 500px;
-}
-</style>
+<style></style>
